@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="title">
+    <h1 class="titulo">Endereço</h1>
+ </div>
+
+  <form #f="ngForm" (ngSubmit)="salvar(f)">
+    <div class="formulario">
+
+     <div class="formulario_cep">
+          <label class="campo__cep" for="cep">CEP</label>
+        <input name="cep" id="cep" class="campo__escrita" placeholder="Digite o Cep" ngModel required #cep="ngModel"
+       pattern="^(\d{5})(-?\d{3})$" minlength="8" max="9" (blur)="consultaCEP($event, f)"/>
+     </div>
+
+        <div class="formulario_endereço">
+          <label class="campo__endereco" for="endereco">Endereço</label>
+          <input name="endereco" id="endereco" class="campo__escrita" ngModel/>
+        </div>
+
+       <div class="formulario_numero">
+          <label class="campo__numero" for="numero">Número</label>
+          <input name="numero" id="numero" class="campo__escrita" ngModel/>
+        </div>
+
+
+        <div class="formulario_complemento">
+          <label class="campo__complemento" for="complemento">Complemento</label>
+          <input name="complemento" id="complemento" class="campo__escrita" ngModel/>
+        </div>
+
+        <div class="formulario_bairro">
+         <label class="campo__bairro" for="bairro">Bairro</label>
+          <input name="bairro" id="bairro" class="campo__escrita" ngModel/>
+        </div>
+
+        <div class="formulario_cidade">
+          <label class="campo__cidade" for="cidade">Cidade</label>
+         <input name="cidade" id="cidade" class="campo__escrita" ngModel/>
+        </div>
+
+        <div class="formulario_uf">
+         <label class="campo__uf" for="estado">UF</label>
+            <select id="estado" name="estado" class="campo__escrita" ngModel>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+              <option value="EX">Estrangeiro</option>
+            </select>
+          </div>
+          <section>
+            <button type="submit" class="botao_consultar">Consultar</button>
+            <button type="reset" class="botao_limpar">Limpar</button>
+          </section>
+    </div>
+
+    </form>
+  </body>
+  </html>
